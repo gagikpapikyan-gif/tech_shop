@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tech CompStore{% endblock %}
+
+{% block body %}
+<div style="max-width: 1300px; margin: 0 auto; padding: 40px 20px; font-family: 'Segoe UI', Roboto, sans-serif; background-color: #f8f9fa; min-height: 100vh;">
+    
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; border-bottom: 2px solid #eaebed; padding-bottom: 20px;">
+        <div>
+            <h1 style="margin: 0; color: #1e272e; font-size: 32px; font-weight: 800; letter-spacing: -1px;">
+                COMP<span style="color: #2f3542;">STORE</span> <span style="color: #3742fa; font-size: 24px;">⚡</span>
+            </h1>
+            <p style="margin: 5px 0 0 0; color: #747d8c; font-size: 15px;">Premium Computer Hardware & Accessories</p>
+        </div>
+        <div style="display: flex; gap: 15px;">
+            <a href="{{ path('app_product_new') }}" style="background-color: #3742fa; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 14px; box-shadow: 0 4px 12px rgba(55, 66, 250, 0.2); transition: 0.2s;">+ Add Product</a>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px;">
+        {% for product in products %}
+            <div style="background: white; border-radius: 16px; border: 1px solid #eccc68; box-shadow: 0 10px 25px rgba(0,0,0,0.03); overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, box-shadow: 0.2s; position: relative;">
+                
+                <div style="width: 100%; height: 240px; background-color: #f1f2f6; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative;">
+                    {% if product.image %}
+                     <img src="{{ product.image }}" alt="{{ product.name }}" style="width: 100%; height: 100%; object-fit: cover;">
+                    {% else %}
+                        <div style="text-align: center; color: #a4b0be;">
+                            <span style="font-size: 50px; display: block; margin-bottom: 8px;">🖥️</span>
+                            <span style="font-size: 13px; font-weight: 500;">No Image Provided</span>
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div style="padding: 24px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="margin: 0 0 8px 0; color: #2f3542; font-size: 18px; font-weight: 700; line-height: 1.4; min-height: 50px;">{{ product.name }}</h3>
+                        <p style="margin: 0 0 20px 0; color: #747d8c; font-size: 14px; line-height: 1.6; height: 44px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{{ product.description }}</p>
+                    </div>
+
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-top: 1px solid #f1f2f6; padding-top: 15px;">
+                            <span style="font-size: 24px; font-weight: 800; color: #ff4757;">${{ product.price|number_format(2) }}</span>
+                            <span style="font-size: 12px; font-weight: bold; color: #2ed573; background: #e3fcef; padding: 6px 10px; border-radius: 20px;">Stock: {{ product.quantity }}</span>
+                        </div>
+
+                        <div style="display: flex; gap: 10px;">
+                            <a href="{{ path('app_product_show', {'id': product.id}) }}" style="flex: 1; text-align: center; background: #f1f2f6; color: #2f3542; padding: 12px 0; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px; transition: 0.2s;">View Details</a>
+                            <a href="{{ path('app_product_edit', {'id': product.id}) }}" style="padding: 12px 18px; background: #ffa502; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 14px; transition: 0.2s;">Edit ⚙️</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        {% else %}
+            <div style="grid-column: 1 / -1; text-align: center; padding: 80px 20px; color: #747d8c; background: white; border-radius: 16px; border: 1px dashed #ced6e0;">
+                <span style="font-size: 60px; display: block; margin-bottom: 15px;">📦</span>
+                <h3 style="margin: 0 0 10px 0; color: #2f3542; font-size: 20px;">Your shop is currently empty</h3>
+                <p style="margin: 0 0 20px 0;">Let's add some graphics cards, processors, or laptops!</p>
+                <a href="{{ path('app_product_new') }}" style="background-color: #3742fa; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 14px; display: inline-block;">+ Add Your First Product</a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

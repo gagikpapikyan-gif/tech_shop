@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add New Product{% endblock %}
+
+{% block body %}
+<div style="max-width: 1300px; margin: 0 auto; padding: 40px 20px; font-family: 'Segoe UI', Roboto, sans-serif; background-color: #f8f9fa; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    
+    <div style="background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); width: 100%; max-width: 500px; border: 1px solid #eccce8;">
+        
+        <h1 style="margin: 0 0 10px 0; color: #1e272e; font-size: 28px; font-weight: 800; text-align: center;">Create New Product</h1>
+        <p style="margin: 0 0 30px 0; color: #747d8c; font-size: 14px; text-align: center;">Fill in the details to add a new item to your shop</p>
+
+        {{ form_start(form) }}
+            
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; font-weight: 600; color: #2f3542; margin-bottom: 8px; font-size: 14px;">Product Name</label>
+                {{ form_widget(form.name, {'attr': {'style': 'width: 100%; padding: 12px; border: 1px solid #ced4da; border-radius: 8px; font-size: 15px; box-sizing: border-box; outline: none; transition: 0.2s;'}}) }}
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; font-weight: 600; color: #2f3542; margin-bottom: 8px; font-size: 14px;">Description</label>
+                {{ form_widget(form.description, {'attr': {'style': 'width: 100%; padding: 12px; border: 1px solid #ced4da; border-radius: 8px; font-size: 15px; box-sizing: border-box; outline: none; min-height: 100px; resize: vertical;'}}) }}
+            </div>
+
+            <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                <div style="flex: 1;">
+                    <label style="display: block; font-weight: 600; color: #2f3542; margin-bottom: 8px; font-size: 14px;">Price ($)</label>
+                    {{ form_widget(form.price, {'attr': {'style': 'width: 100%; padding: 12px; border: 1px solid #ced4da; border-radius: 8px; font-size: 15px; box-sizing: border-box;'}}) }}
+                </div>
+                <div style="flex: 1;">
+                    <label style="display: block; font-weight: 600; color: #2f3542; margin-bottom: 8px; font-size: 14px;">Quantity</label>
+                    {{ form_widget(form.quantity, {'attr': {'style': 'width: 100%; padding: 12px; border: 1px solid #ced4da; border-radius: 8px; font-size: 15px; box-sizing: border-box;'}}) }}
+                </div>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; font-weight: 600; color: #2f3542; margin-bottom: 8px; font-size: 14px;">Image URL</label>
+                {{ form_widget(form.image, {'attr': {'placeholder': 'https://example.com/image.jpg', 'style': 'width: 100%; padding: 12px; border: 1px solid #ced4da; border-radius: 8px; font-size: 15px; box-sizing: border-box;'}}) }}
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <label style="display: block; font-weight: 600; color: #2f3542; margin-bottom: 8px; font-size: 14px;">Category ID</label>
+                {{ form_widget(form.category, {'attr': {'style': 'width: 100%; padding: 12px; border: 1px solid #ced4da; border-radius: 8px; font-size: 15px; box-sizing: border-box; background: white;'}}) }}
+            </div>
+
+            <button style="width: 100%; background-color: #3742fa; color: white; border: none; padding: 14px; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; transition: 0.2s; box-shadow: 0 4px 12px rgba(55, 66, 250, 0.2);">
+                Save Product
+            </button>
+
+        {{ form_end(form) }}
+
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="{{ path('app_product_index') }}" style="color: #747d8c; text-decoration: none; font-size: 14px; font-weight: 600; transition: 0.2s;">
+                ← Back to list
+            </a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

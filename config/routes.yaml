@@ -1,11 +1,24 @@
-# yaml-language-server: $schema=../vendor/symfony/routing/Loader/schema/routing.schema.json
+app_product_index:
+    path: /product
+    controller: App\Controller\ProductController::index
 
-# This file is the entry point to configure the routes of your app.
-# Methods with the #[Route] attribute are automatically imported.
-# See also https://symfony.com/doc/current/routing.html
+app_product_new:
+    path: /product/new
+    controller: App\Controller\ProductController::new
 
-# To list all registered routes, run the following command:
-#   bin/console debug:router
+app_product_show:
+    path: /product/{id}
+    controller: App\Controller\ProductController::show
 
-controllers:
-    resource: routing.controllers
+app_product_edit:
+    path: /product/{id}/edit
+    controller: App\Controller\ProductController::edit
+
+app_product_delete:
+    path: /product/{id}
+    methods: POST
+    controller: App\Controller\ProductController::delete
+
+app_admin_dashboard:
+    path: /admin
+    controller: App\Controller\AdminController::index
