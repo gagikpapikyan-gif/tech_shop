@@ -18,6 +18,6 @@ RUN composer config platform.php 8.2.12
 RUN sed -ri -e 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/*.conf
 
 # Թարմացնում ենք symfony-ի գրադարանը հենց build-ի ժամանակ
-RUN composer update symfony/http-foundation --no-dev --optimize-autoloader --no-scripts --ignore-platform-reqs
+RUN composer update symfony/http-foundation --with-dependencies --no-dev --optimize-autoloader --no-scripts --ignore-platform-reqs
 
 EXPOSE 80
