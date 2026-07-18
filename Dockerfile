@@ -1,11 +1,19 @@
-FROM thecodingmachine/php:8.2-v4-apache
+FROM php:8.2-apache
 
-ENV PHP_EXTENSION_INTL=1 \
-    PHP_EXTENSION_GD=1 \
-    PHP_EXTENSION_ZIP=1 \
-    APACHE_DOCUMENT_ROOT=public
+# Տեղադրում ենք միայն ամենաանհրաժեշտը՝ առանց ավելորդ թարմացումների
+RUN apt-get update && apt-get install -y git unzip zip libicu-dev \
+    && docker-php-ext-install intl pdo_mysql \
+    && a2enmod rewrite
 
-COPY --chown=docker:docker . /var/www/html
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Ավելացրինք --no-scripts, որ Symfony-ի ներքին սկրիպտները Build-ը չփչացնեն
+WORKDIR /var/www/html
+
+COPY . .
+
+RUN sed -ri -e 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/*.conf
+
+# Շրջանցում ենք բոլոր հնարավոր սկրիպտների ու պլատֆորմի սխալները
 RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs --no-scripts
+
+EXPOSE 80
