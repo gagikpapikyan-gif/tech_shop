@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "46ab4131ce0862853c1dec03b5b40d34",
+    "content-hash": "936202631156e8c702077292c33ee412",
     "packages": [
         {
             "name": "composer/semver",
@@ -6276,16 +6276,16 @@
         },
         {
             "name": "symfony/stimulus-bundle",
-            "version": "v3.2.0",
+            "version": "v3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/stimulus-bundle.git",
-                "reference": "3cf8cd35c400f287def6ccd4574c111c07661054"
+                "reference": "1a885a51d6bad71e869779da148dfef4fc8e5705"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/stimulus-bundle/zipball/3cf8cd35c400f287def6ccd4574c111c07661054",
-                "reference": "3cf8cd35c400f287def6ccd4574c111c07661054",
+                "url": "https://api.github.com/repos/symfony/stimulus-bundle/zipball/1a885a51d6bad71e869779da148dfef4fc8e5705",
+                "reference": "1a885a51d6bad71e869779da148dfef4fc8e5705",
                 "shasum": ""
             },
             "require": {
@@ -6328,7 +6328,7 @@
                 "symfony-ux"
             ],
             "support": {
-                "source": "https://github.com/symfony/stimulus-bundle/tree/v3.2.0"
+                "source": "https://github.com/symfony/stimulus-bundle/tree/v3.3.0"
             },
             "funding": [
                 {
@@ -6348,7 +6348,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-06-05T09:42:50+00:00"
+            "time": "2026-07-13T16:10:12+00:00"
         },
         {
             "name": "symfony/stopwatch",
@@ -6957,16 +6957,16 @@
         },
         {
             "name": "symfony/ux-turbo",
-            "version": "v3.2.0",
+            "version": "v3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ux-turbo.git",
-                "reference": "923c6479da86ebdcbd4f723a80c24d47d50567fa"
+                "reference": "505f246b967c39265ce7ec3b23273098bd787d31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ux-turbo/zipball/923c6479da86ebdcbd4f723a80c24d47d50567fa",
-                "reference": "923c6479da86ebdcbd4f723a80c24d47d50567fa",
+                "url": "https://api.github.com/repos/symfony/ux-turbo/zipball/505f246b967c39265ce7ec3b23273098bd787d31",
+                "reference": "505f246b967c39265ce7ec3b23273098bd787d31",
                 "shasum": ""
             },
             "require": {
@@ -7034,7 +7034,7 @@
                 "turbo-stream"
             ],
             "support": {
-                "source": "https://github.com/symfony/ux-turbo/tree/v3.2.0"
+                "source": "https://github.com/symfony/ux-turbo/tree/v3.3.0"
             },
             "funding": [
                 {
@@ -7054,7 +7054,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-06-19T07:14:15+00:00"
+            "time": "2026-07-09T05:17:17+00:00"
         },
         {
             "name": "symfony/validator",
@@ -8803,16 +8803,16 @@
         },
         {
             "name": "sebastian/exporter",
-            "version": "8.1.0",
+            "version": "8.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/exporter.git",
-                "reference": "c0d29a945f8cf82f300a05e69874508e307ca4c6"
+                "reference": "cfaa77c750dcad6f44c9bac8f62ac486e1c82c26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/c0d29a945f8cf82f300a05e69874508e307ca4c6",
-                "reference": "c0d29a945f8cf82f300a05e69874508e307ca4c6",
+                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/cfaa77c750dcad6f44c9bac8f62ac486e1c82c26",
+                "reference": "cfaa77c750dcad6f44c9bac8f62ac486e1c82c26",
                 "shasum": ""
             },
             "require": {
@@ -8821,7 +8821,7 @@
                 "sebastian/recursion-context": "^8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^13.1.10"
+                "phpunit/phpunit": "^13.2.4"
             },
             "type": "library",
             "extra": {
@@ -8869,7 +8869,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/exporter/issues",
                 "security": "https://github.com/sebastianbergmann/exporter/security/policy",
-                "source": "https://github.com/sebastianbergmann/exporter/tree/8.1.0"
+                "source": "https://github.com/sebastianbergmann/exporter/tree/8.1.1"
             },
             "funding": [
                 {
@@ -8889,7 +8889,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-21T11:50:56+00:00"
+            "time": "2026-07-13T11:35:11+00:00"
         },
         {
             "name": "sebastian/file-filter",
